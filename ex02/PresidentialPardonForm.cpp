@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 14:33:49 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 17:44:32 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/24 23:21:02 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(): AForm("", 25, 5) {
-    std::cout << "Default constructor Shrubbery Called" << std::endl;
+    //std::cout << "Default constructor Presidential Called" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-    std::cout << "Default destructor Shrubbery Called" << std::endl;
+    //std::cout << "Default destructor Presidential Called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string name): AForm(name, 25, 5) {
-    std::cout << "Assigment constructor Shrubbery Called" << std::endl;
+    //std::cout << "Assigment constructor Presidential Called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other): AForm(other.getName(), 145, 137) {
-    std::cout << "Copy constructor Shrubbery Called" << std::endl;
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other): AForm(other.getName(), 25, 5) {
+    //std::cout << "Copy constructor Presidential Called" << std::endl;
 }
 
 void        PresidentialPardonForm::executeForm() const {
-    std::cout << getName() << "has been pardoned by Zaphod Beeblebrox" << std::endl;
+    std::cout << getName() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
 PresidentialPardonForm   &PresidentialPardonForm::operator=(const PresidentialPardonForm &other){

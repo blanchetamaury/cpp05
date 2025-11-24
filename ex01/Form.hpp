@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 12:39:13 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 09:58:00 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/24 22:42:43 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ class Form {
     public:
                             Form();
                             ~Form();
-                            Form(const std::string name, bool sign, const int requiredsign, const int requireexec);
+                            Form(const std::string name, const int requiredsign, const int requireexec);
                             Form(const Form &other);
         Form                &operator=(const Form &other);
 
         void                beSigned(Bureaucrat &other);
-        void                signForm(Bureaucrat &other);
+
+        const std::string   getName() const;
+        bool                getSign() const;
 
         class GradeTooHighException: public std::exception {
             public:
@@ -42,5 +44,8 @@ class Form {
                 virtual const char* what() const throw();
         };  
 };
+
+
+std::ostream &operator<<(std::ostream &out, Form &other);
 
 #endif //Form_HPP

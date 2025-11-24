@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:01:06 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 17:55:19 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/24 23:21:25 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("", 145, 137) {
-    std::cout << "Default constructor Shrubbery Called" << std::endl;
+    //std::cout << "Default constructor Shrubbery Called" << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
-    std::cout << "Default destructor Shrubbery Called" << std::endl;
+    //std::cout << "Default destructor Shrubbery Called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string newname): AForm(newname, 145, 137) {
-    std::cout << "Assigment constructor Shrubbery Called" << std::endl;
+    //std::cout << "Assigment constructor Shrubbery Called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other): AForm(other.getName(), 145, 137) {
-    std::cout << "Copy constructor Shrubbery Called" << std::endl;
+    //std::cout << "Copy constructor Shrubbery Called" << std::endl;
 }
 
 ShrubberyCreationForm   &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other){
