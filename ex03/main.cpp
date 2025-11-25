@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 11:31:54 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 23:47:21 by amaury           ###   ########.fr       */
+/*   Updated: 2025/11/25 09:39:00 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ int main(void){
 		delete CForm;
 
 	}
-	catch (Bureaucrat::GradeTooHighException& e){std::cout << name << " has " << e.what() << std::endl;}
-	catch (Bureaucrat::GradeTooLowException& e){std::cout << name << " has " << e.what() << std::endl;}
+	catch (std::exception& e){std::cout << name << " has " << e.what() << std::endl;}
 }	

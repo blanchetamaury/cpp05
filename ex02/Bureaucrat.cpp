@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 11:32:24 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 23:22:24 by amaury           ###   ########.fr       */
+/*   Updated: 2025/11/25 09:04:45 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat(): name(""), grade(0) {
+Bureaucrat::Bureaucrat(): name(""), grade(150) {
     //std::cout << "Default Contructor Bureaucrat Called" << std::endl;
 }
 
@@ -54,20 +54,22 @@ int Bureaucrat::getGrade() const {
     return (grade);
 }
 
-void Bureaucrat::GradeDecrease() {
-    if (this->grade > 1)
-        this->grade--;
-    else
+void Bureaucrat::gradeDecrease() {
+    this->grade++;
+    if (grade > 150)
         throw GradeTooLowException();
-    std::cout << "Bureaucrat " << this->name << ", new grade is " << this->grade << "." << std::endl;
+    if (grade < 1)
+        throw GradeTooHighException();
+    std::cout << "Bureaucrat " << this->name << ", this grade is " << this->grade << "." << std::endl;
 }
 
-void Bureaucrat::GradeIncrease() {
-    if (this->grade < 150)
-        this->grade++;
-    else
+void Bureaucrat::gradeIncrease() {
+    this->grade--;
+    if (grade > 150)
+        throw GradeTooLowException();
+    if (grade < 1)
         throw GradeTooHighException();
-    std::cout << "Bureaucrat " << this->name << ", new grade is " << this->grade << "." << std::endl;
+     std::cout << "Bureaucrat " << this->name << ", this grade is " << this->grade << "." << std::endl;
 }
 
 void    Bureaucrat::signForm(AForm &form) {

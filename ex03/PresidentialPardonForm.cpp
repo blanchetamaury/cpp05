@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 14:33:49 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 23:21:02 by amaury           ###   ########.fr       */
+/*   Updated: 2025/11/25 09:31:40 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,4 @@ PresidentialPardonForm   &PresidentialPardonForm::operator=(const PresidentialPa
         AForm::operator=(other);
     }
     return *this;
-}
-
-std::ostream &operator<<(std::ostream &out, PresidentialPardonForm &other) {
-    if (other.getSign())
-        out << other.getName() << ", PresidentialPardonForm is sign.";
-    else
-        out << other.getName() << ", PresidentialPardonForm is not sign.";
-    return out;
 }

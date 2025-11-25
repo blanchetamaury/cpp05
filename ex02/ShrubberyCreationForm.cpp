@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:01:06 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 23:21:25 by amaury           ###   ########.fr       */
+/*   Updated: 2025/11/25 09:28:20 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,5 @@ void        ShrubberyCreationForm::executeForm() const {
         }
         fs.close();
     }
-}
-
-std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm &other) {
-    if (other.getSign())
-        out << other.getName() << ", ShrubberyCreationForm is sign.";
-    else
-        out << other.getName() << ", ShrubberyCreationForm is not sign.";
-    return out;
 }
 

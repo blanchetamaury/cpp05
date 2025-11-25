@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 12:39:13 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 17:19:29 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:28:55 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ class AForm {
                 virtual const char* what() const throw();
         };
 };
+
+std::ostream &operator<<(std::ostream &out, AForm &other);
 
 #endif //Form_HPP

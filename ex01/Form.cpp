@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 12:39:15 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 22:51:21 by amaury           ###   ########.fr       */
+/*   Updated: 2025/11/25 09:11:38 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(): name(""), sign(0), requiredsign(0), requiredexec(0) {
+Form::Form(): name(""), sign(false), requiredsign(150), requiredexec(150) {
     //std::cout << "Default constructor Form called" << std::endl;
 }
 
@@ -22,6 +22,10 @@ Form::~Form() {
 
 Form::Form(const std::string name, const int requiredsign, const int requiredexec): name(name), sign(false), requiredsign(requiredsign), requiredexec(requiredexec) {
     //std::cout << "Assigment constructor Form called" << std::endl;
+    if (requiredsign > 150 || requiredexec > 150)
+        throw GradeTooLowException();
+    if (requiredsign < 1 || requiredexec < 1)
+        throw GradeTooHighException();
 }
 
 Form::Form(const Form &other): name(other.name), sign(other.sign), requiredsign(other.requiredsign), requiredexec(other.requiredexec) {

@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:00:58 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 17:19:02 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:28:01 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,5 @@ class ShrubberyCreationForm: public AForm {
         ShrubberyCreationForm   &operator=(const ShrubberyCreationForm &other);
         void    executeForm() const;
 };
-
-std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm &other);
 
 #endif

@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 11:31:54 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 22:15:12 by amaury           ###   ########.fr       */
+/*   Updated: 2025/11/25 09:03:53 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int main() {
-    Bureaucrat didier("didier", 5);
+    Bureaucrat didier("didier", 150);
 
-    std::cout << "-----GradeDecrease------" << std::endl;
-    for (int i = 5; i > 0; i--) {
+    std::cout << std::endl << "-----GradeIncrease------" << std::endl << std::endl;
+    for (int i = 0; i < 151; i++) {
         try {
-            didier.GradeDecrease();
+            didier.gradeIncrease();
         }
         catch (std::exception &e) {
             std::cout << e.what() << std::endl;
         }
     }
-    std::cout << std::endl << "-----GradeIncrease------" << std::endl << std::endl;
-    for (int i = 0; i < 151; i++) {
+    std::cout << "-----GradeDecrease------" << std::endl;
+    for (int i = 5; i > 0; i--) {
         try {
-            didier.GradeIncrease();
+            didier.gradeDecrease();
         }
         catch (std::exception &e) {
             std::cout << e.what() << std::endl;

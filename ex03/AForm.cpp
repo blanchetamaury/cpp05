@@ -12,7 +12,7 @@
 
 #include "AForm.hpp"
 
-AForm::AForm(): name(""), sign(0), requiredsign(0), requiredexec(0) {
+AForm::AForm(): name(""), sign(false), requiredsign(150), requiredexec(150) {
     //std::cout << "Default constructor AForm called" << std::endl;
 }
 
@@ -22,6 +22,10 @@ AForm::~AForm() {
 
 AForm::AForm(const std::string name, const int requiredsign, const int requiredexec): name(name), sign(false), requiredsign(requiredsign), requiredexec(requiredexec) {
     //std::cout << "Assigment constructor AForm called" << std::endl;
+    if (requiredsign > 150 || requiredexec > 150)
+        throw GradeTooLowException();
+    if (requiredsign < 1 || requiredexec < 1)
+        throw GradeTooHighException();
 }
 
 AForm::AForm(const AForm &other): name(other.name), sign(other.sign), requiredsign(other.requiredsign), requiredexec(other.requiredexec) {
@@ -61,4 +65,12 @@ const char* AForm::GradeTooHighException::what() const throw() {
 
 const char* AForm::GradeTooLowException::what() const throw() {
     return ("grade too low");
+}
+
+std::ostream &operator<<(std::ostream &out, AForm &other) {
+    if (other.getSign())
+        out << other.getName() << ", Form is sign.";
+    else
+        out << other.getName() << ", Form is not sign.";
+    return out;
 }

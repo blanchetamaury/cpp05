@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 11:31:54 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 23:46:34 by amaury           ###   ########.fr       */
+/*   Updated: 2025/11/25 09:40:38 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int main(void){
 	
 	std::srand(time(0));
 	int grade = std::rand() % 50;
-	if (grade < 0) grade *= -1;
 	std::cout << "Random grade is " << grade << std::endl;
 	std::string name = "Didier";
 	try{
@@ -51,6 +50,4 @@ int main(void){
 		try{bureaucrat.executeForm(Pform);}
 		catch(AForm::GradeTooLowException &e){std::cout << "error\n" << std::endl;}
 	}
-	catch (Bureaucrat::GradeTooHighException& e){std::cout << name << " has " << e.what() << std::endl;}
-	catch (Bureaucrat::GradeTooLowException& e){std::cout << name << " has " << e.what() << std::endl;}
-}	
+	catch (std::exception& e){std::cout << name << " has " << e.what() << std::endl;}}	

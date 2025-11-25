@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 10:23:20 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 14:34:25 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:31:35 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,5 @@ class PresidentialPardonForm: public AForm {
         PresidentialPardonForm   &operator=(const PresidentialPardonForm &other);
         void    executeForm() const;
 };
-
-std::ostream &operator<<(std::ostream &out, PresidentialPardonForm &other);
-
-
 
 #endif

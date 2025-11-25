@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:01:34 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 17:54:35 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:31:01 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,5 @@ class RobotomyRequestForm: virtual public AForm {
                 virtual const char* what() const throw();
         };
 };
-
-std::ostream &operator<<(std::ostream &out, RobotomyRequestForm &other);
 
 #endif

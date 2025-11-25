@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 11:32:27 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/24 15:34:32 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/25 08:55:28 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ class Bureaucrat {
         std::string     getName() const;
         int             getGrade() const;
 
-        void            GradeDecrease(void);
-        void            GradeIncrease(void);
+        void            gradeDecrease(void);
+        void            gradeIncrease(void);
 
         void            signForm(AForm &other);
         
