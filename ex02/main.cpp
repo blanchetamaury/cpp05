@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 11:31:54 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/25 09:40:38 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:43:07 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,20 @@ int main(void){
 		ShrubberyCreationForm Sform("creation");
 		std::cout << Sform << std::endl;
 		bureaucrat.signForm(Sform);
-		try{bureaucrat.executeForm(Sform);}
-		catch(AForm::GradeTooLowException &e){std::cout << "error\n" << std::endl;}
+		bureaucrat.executeForm(Sform);
 		
 		std::cout <<"\nRobotomyRequestForm : \n" << std::endl;
 		
 		RobotomyRequestForm Rform("creation");
 		std::cout << Rform << std::endl;
 		bureaucrat.signForm(Rform);
-		try{bureaucrat.executeForm(Rform);}
-		catch(AForm::GradeTooLowException &e){std::cout << "error\n" << std::endl;}
+		bureaucrat.executeForm(Rform);
 		
 		std::cout <<"\nPresidentialPardonForm : \n" << std::endl;
 		
 		PresidentialPardonForm Pform("creation");
 		std::cout << Pform << std::endl;
 		bureaucrat.signForm(Pform);
-		try{bureaucrat.executeForm(Pform);}
-		catch(AForm::GradeTooLowException &e){std::cout << "error\n" << std::endl;}
+		bureaucrat.executeForm(Pform);
 	}
 	catch (std::exception& e){std::cout << name << " has " << e.what() << std::endl;}}	

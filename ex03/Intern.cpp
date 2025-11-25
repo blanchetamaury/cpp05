@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:30:50 by amaury            #+#    #+#             */
-/*   Updated: 2025/11/24 23:48:38 by amaury           ###   ########.fr       */
+/*   Updated: 2025/11/25 09:46:22 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ AForm   *Intern::makeForm(std::string type, std::string file) {
             std::cout << "Intern creates " << type << std::endl;
             return new PresidentialPardonForm(file);
         default:
-            std::cout << "The intern cannot create" << type << std::endl;
+            std::cout << "The intern cannot create " << type << std::endl;
             break;
     }
     return NULL;

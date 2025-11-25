@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 11:31:54 by amblanch          #+#    #+#             */
-/*   Updated: 2025/11/25 09:39:00 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/11/25 09:44:30 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void){
 	std::srand(time(0));
 	int grade = std::rand() % 50;
 	std::cout << "Random grade is " << grade << std::endl;
-	std::string name = "Didier";	
+	std::string name = "Didier";
 	try{
 		Bureaucrat bureaucrat(name, grade);
 		std::cout << bureaucrat << std::endl;
@@ -31,7 +31,7 @@ int main(void){
 		AForm* SForm = someRandomIntern.makeForm("shrubbery creation", "creation");
 		AForm* RForm = someRandomIntern.makeForm("robotomy request", "robot");
 		AForm* PForm = someRandomIntern.makeForm("presidential pardon", "sorry");
-		AForm* CForm = someRandomIntern.makeForm("caca", "Bender");
+		AForm* CForm = someRandomIntern.makeForm("unknown", "Bender");
 		
 		std::cout << "\nBureaucrat Signed :\n" << std::endl;
 
@@ -43,18 +43,15 @@ int main(void){
 
 		std::cout <<"\nShrubberyCreationForm : \n" << std::endl;
 		
-		try{bureaucrat.executeForm(*SForm);}
-		catch(AForm::GradeTooLowException &e){std::cout << "error\n" << std::endl;}
+		bureaucrat.executeForm(*SForm);
 
 		std::cout <<"\nRobotomyRequestForm : \n" << std::endl;
 		
-		try{bureaucrat.executeForm(*RForm);}
-		catch(AForm::GradeTooLowException &e){std::cout << "error\n" << std::endl;}
+		bureaucrat.executeForm(*RForm);
 
 		std::cout <<"\nPresidentialPardonForm : \n" << std::endl;
 		
-		try{bureaucrat.executeForm(*PForm);}
-		catch(AForm::GradeTooLowException &e){std::cout << "error\n" << std::endl;}
+		bureaucrat.executeForm(*PForm);
 		
 		delete RForm;
 		delete SForm;
